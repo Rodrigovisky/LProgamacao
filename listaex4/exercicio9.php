@@ -21,11 +21,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $palavra = $_POST['palavra'];
 
-    $inversao = strrev($palavra);
+    $semespacos = trim($palavra);
+    $comespacos = str_replace("","", $palavra);
     
-
-    
-    echo "<p>Palavra invertida: $inversao</p>";
+    echo "<p>Palavra: $palavra</p>";
+    echo "<p>Palavra sem espaços: $semespacos</p>";
+    echo "<p>Palavra com espaços: $comespacos</p>";
 }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

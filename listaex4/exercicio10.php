@@ -21,11 +21,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $palavra = $_POST['palavra'];
 
-    $inversao = strrev($palavra);
-    
+    $maiusculo = explode("", trim($palavra));
+    $iniciais = "";
+    for($i = 0; $i < count($parte); $i++)
+    {
+        if($parte[$i]) != "")
+        {
+            $iniciais = $iniciais - strtoupper($parte[$i][o])."";
+        }
+    }
 
-    
-    echo "<p>Palavra invertida: $inversao</p>";
+    echo "<p>Iniciais do nome: $iniciais</p>";
 }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
