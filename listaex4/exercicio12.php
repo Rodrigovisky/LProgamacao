@@ -3,29 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Exercício 7</title>
+<title>Exercício 12</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body> 
 <div class="container py-3">
-<h1>Exercício 7</h1>
+<h1>Exercício 12</h1>
 <form method="post">
 <div class="mb-3">
-              <label for="palavra" class="form-label">Digite uma palavra:</label>
-              <input type="text" id="palavra" name="palavra" class="form-control" required="">
+              <label for="valor" class="form-label">Gerar uma senha</label>
+              <input type="submit" id="valor" name="valor" class="form-control" required="">
             </div>
-<button type="submit" class="btn btn-primary">Enviar</button>
+<button type="submit" class="btn btn-primary">Gerar</button>
 </form>
 <?php
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-    $palavra = $_POST['palavra'];
+    $caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    $senha = "";
 
-    $inversao = strrev($palavra);
-    
+    for($i = 0; $i < 8; $i++)
+    {
+        $indice = rand(0, strlen($caracteres) - 1);
+        $senha = $senha . $caracteres[$indice];
+    }
 
-    
-    echo "<p>Palavra invertida: $inversao</p>";
+    echo "<p>Senha gerada: $senha</p>";
 }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
