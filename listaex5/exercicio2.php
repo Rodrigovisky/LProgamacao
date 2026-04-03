@@ -3,21 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Exercício 02</title>
+<title>Exercício2</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body> 
 <div class="container py-3">
-<h1>Exercício 02</h1>
+<h1>Exercício2</h1>
 <form method="post">
             <?php
             for($i=0; $i<5; $i++)
             echo '<div class="mb-3">
-                <label class="form-label">Nome:</label>
+                <label>Nome:</label>
                 <input type="text" name="nome[]" class="form-control" required="">
-
-                <label class="form-label">Telefone:</label>
-                <input type="text" name="telefone[]" class="form-control" required="">
+                <label>Nota 1:</label>
+                <input type="number" name="n1[]" class="form-control" required="">
+                <label>Nota 2:</label>
+                <input type="number" name="n2[]" class="form-control" required="">
+                <label>Nota 3:</label>
+                <input type="number" name="n3[]" class="form-control" required="">
             </div>';
 ?>
 <button type="submit" class="btn btn-primary">Enviar</button>
@@ -26,38 +29,26 @@
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $nomes = $_POST['nome'];
-    $telefones = $_POST['telefone'];
+    $n1 = $_POST['n1'];
+    $n2 = $_POST['n2'];
+    $n3 = $_POST['n3'];
 
-    $contatos = [];
-    $erro = false;
+    $alunos = [];
 
     for($i = 0; $i < count($nomes); $i++)
     {
-        $nome = $nomes[$i];
-        $telefone = $telefones[$i];
+        $media = ($n1[$i] + $n2[$i] + $n3[$i]) / 3;
 
-        // verifica duplicatas
-        if(isset($contatos[$nome]) || in_array($telefone, $contatos))
-        {
-            echo "<p>Erro: duplicado ($nome - $telefone)</p>";
-            $erro = true;
-        }
-        else
-        {
-            $contatos[$nome] = $telefone;
-        }
+        $alunos[$nomes[$i]] = $media;
     }
 
-    if(!$erro)
+    arsort($alunos);
+
+    echo "<p><strong>Lista de alunos:</strong></p>";
+
+    foreach($alunos as $nome => $media)
     {
-        ksort($contatos); // ordena pelo nome
-
-        echo "<p><strong>Contatos ordenados:</strong></p>";
-
-        foreach($contatos as $nome => $telefone)
-        {
-            echo "<p>$nome : $telefone</p>";
-        }
+        echo "<p>$nome : $media</p>";
     }
 }
 ?>
