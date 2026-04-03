@@ -37,7 +37,6 @@
         </div>
       </div>
 
-      <!-- Linha 2 -->
       <div class="row mb-3">
         <div class="col-md-3">
           <label class="form-label">Nº Celular</label>
@@ -65,7 +64,6 @@
         </div>
       </div>
 
-      <!-- Linha 3 -->
       <div class="row mb-3">
         <div class="col-md-4">
           <label class="form-label">Bairro</label>
@@ -92,7 +90,6 @@
         </div>
       </div>
 
-      <!-- Botões -->
       <div class="d-flex justify-content-end gap-2">
         <button type="reset" class="btn btn-danger">Resetar</button>
         <button type="submit" class="btn btn-success">Próximo</button>
