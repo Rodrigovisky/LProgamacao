@@ -37,11 +37,11 @@
     Gerenciar Suporte
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown2">
-    <li><a class="dropdown-item" href="/Clientes/crud_clientes.php">Cadastro de Clientes (RF1)</a></li>
-    <li><a class="dropdown-item" href="/Tecnicos/crud_tecnicos.php">Cadastro de Técnicos (RF2)</a></li>
-    <li><a class="dropdown-item" href="/TiposChamados/crud_tipos.php">Tipos de Chamados (RF3)</a></li>
+    <li><a class="dropdown-item" href="/Clientes/clientes.php">Cadastro de Clientes (RF1)</a></li>
+    <li><a class="dropdown-item" href="/Tecnicos/tecnicos.php">Cadastro de Técnicos (RF2)</a></li>
+    <li><a class="dropdown-item" href="/TiposChamados/tipos.php">Tipos de Chamados (RF3)</a></li>
     <li><div class="dropdown-divider"></div></li>
-    <li><a class="dropdown-item" href="/Atendimentos/crud_atendimentos.php">Registrar Atendimento (RF4)</a></li>
+    <li><a class="dropdown-item" href="/Atendimentos/atendimentos.php">Registrar Atendimento (RF4)</a></li>
   </ul>
 </li>
 
