@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de Controle</title>
+    <title>HelpDesk - Controle de Chamados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
@@ -11,12 +11,12 @@
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
-        <h3 class="text-center mb-4">Sistema de Controle </h3>
+        <h3 class="text-center mb-4">HelpDesk Suporte</h3>
 
         <form method="post">
             <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input name="email"type="email" class="form-control" placeholder="Digite seu email" required>
+                <label class="form-label">E-mail Corporativo</label>
+                <input name="email" type="email" class="form-control" placeholder="usuario@empresa.com" required>
             </div>
 
             <div class="mb-3">
@@ -24,7 +24,7 @@
                 <input name="senha" type="password" class="form-control" placeholder="Digite sua senha" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            <button type="submit" class="btn btn-primary w-100">Acessar Painel</button>
             <?php
                 session_start();
                 if ($_SERVER['REQUEST_METHOD'] == "POST")
@@ -45,16 +45,15 @@
                                 header('Location: principal.php');
                             }
                         else{
-                            echo "<p class='text-danger'> Credenciais Inválidas!</p>";
+                            echo "<p class='text-danger mt-3 mb-0 text-center'>Credenciais Inválidas!</p>";
                         }
                     } catch(Exception $e){
-                        echo "Erro: ".$e->getMessage();
+                        echo "<p class='text-danger mt-3 mb-0 text-center'>Erro: ".$e->getMessage()."</p>";
                     }
-                
                 }
             ?>
             <div class="text-center mt-3">
-                <a href="cadastro.php">Criar conta</a>
+                <a href="cadastro.php">Criar conta de operador</a>
             </div>
         </form>
     </div>
