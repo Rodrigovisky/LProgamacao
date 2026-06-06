@@ -1,0 +1,186 @@
+/* ============================================================
+   HelpDesk – Sistema de Controle de Chamados de Suporte Técnico
+   Folha de estilos unificada adaptada
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ============================================================
+   1. VARIÁVEIS GLOBAIS (Mantidas para consistência visual)
+   ============================================================ */
+:root {
+    --amarelo:      #F5C518;
+    --amarelo-deep: #D4A900;
+    --preto:        #0D0D0D;
+    --cinza-dark:   #1A1A2E;
+    --cinza-mid:    #252540;
+    --cinza-light:  #3A3A5C;
+    --branco:       #F9F9F9;
+    --accent:       #FF6B35;
+    
+    /* Cores de Suporte Técnico Adicionadas */
+    --status-aberto:      #ff9800; /* Laranja para chamados abertos */
+    --status-andamento:   #2196f3; /* Azul para em atendimento */
+    --status-finalizado:  #4caf50; /* Verde para resolvido */
+    --prioridade-alta:    #f44336; /* Vermelho para urgente */
+}
+
+/* ============================================================
+   2. ESTILIZAÇÃO DO CORPO E FONTES
+   ============================================================ */
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--preto);
+    background-color: #F4F5F8 !important; /* Fundo padrão das páginas internas */
+}
+
+h2, h3, h5, .navbar-brand {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* ============================================================
+   3. ADAPTAÇÃO PARA OS CARDS DE FORMULÁRIO (Clientes, Técnicos, Chamados)
+   ============================================================ */
+.card {
+    border-radius: 16px !important;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.card-header {
+    background-color: var(--cinza-dark) !important;
+    color: var(--branco) !important;
+    border-bottom: none !important;
+    font-size: 1.1rem;
+}
+
+/* Inputs em modo leitura (Consultar) */
+.form-control[readonly] {
+    background-color: #f8f9fa !important;
+    border-color: #e9ecef !important;
+    color: #495057 !important;
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   4. BADGES PERSONALIZADOS (Status e Prioridades dos Chamados)
+   ============================================================ */
+/* Estados do Chamado (RF4) */
+.badge.bg-aberto {
+    background-color: var(--status-aberto) !important;
+    color: #fff !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.badge.bg-andamento {
+    background-color: var(--status-andamento) !important;
+    color: #fff !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.badge.bg-finalizado {
+    background-color: var(--status-finalizado) !important;
+    color: #fff !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Níveis de Prioridade (RF3) */
+.badge.bg-prioridade-alta {
+    background-color: var(--prioridade-alta) !important;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(244, 67, 54, 0.3);
+}
+
+.badge.bg-prioridade-media {
+    background-color: var(--status-aberto) !important;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.badge.bg-prioridade-baixa {
+    background-color: #78909c !important;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* ============================================================
+   5. BOTÕES E INTERAÇÕES (Mantendo o padrão do seu design)
+   ============================================================ */
+.btn-primary {
+    background: var(--amarelo) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: var(--preto) !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
+    transition: all .2s ease !important;
+}
+
+.btn-primary:hover {
+    background: var(--amarelo-deep) !important;
+    box-shadow: 0 4px 12px rgba(245, 197, 24, 0.4) !important;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    border: 1.5px solid var(--cinza-dark) !important;
+    border-radius: 10px !important;
+    color: var(--cinza-dark) !important;
+    font-weight: 600 !important;
+    padding: 9px 19px !important;
+    transition: all .2s !important;
+}
+
+.btn-secondary:hover {
+    background: var(--cinza-dark) !important;
+    color: #fff !important;
+}
+
+.btn-danger {
+    background: #e53935 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
+    transition: all .2s !important;
+}
+
+.btn-danger:hover {
+    background: #c62828 !important;
+    box-shadow: 0 4px 12px rgba(229, 57, 53, .3) !important;
+}
+
+/* ============================================================
+   6. MODAIS DE CONFIRMAÇÃO (Eliminação de Registros)
+   ============================================================ */
+.modal-content {
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+.modal-header {
+    background-color: var(--cinza-dark) !important;
+    color: var(--branco) !important;
+    border-bottom: none !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+    padding-top: 0 !important;
+}
